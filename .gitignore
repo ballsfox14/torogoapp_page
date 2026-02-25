@@ -1,0 +1,52 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno y configuración sensible
+.env
+.env.backup
+.env.production
+.env.production.backup
+artisan.zip
+
+# Archivos de IDE / editores
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+.phpactor.json
+
+# Cachés y logs
+*.log
+*.cache
+.phpunit.result.cache
+/storage/*.key
+/storage/pail
+
+# Node y dependencias PHP
+/node_modules
+/vendor
+/auth.json
+
+# Archivos de Homestead (si usas Vagrant)
+Homestead.json
+Homestead.yaml
+
+# Archivos generados por Laravel Mix / Vite
+/public/build
+/public/hot
+/public/storage
+
+# Ignorar todo el contenido de storage excepto carpetas necesarias
+/storage/*
+!/storage/app/
+!/storage/app/public/
+!/storage/framework/
+!/storage/framework/cache/
+!/storage/framework/cache/data/
+!/storage/logs/
+!/storage/logs/.gitignore
+
+# Archivos de prueba y caché de PHPUnit
+.phpunit.cache
