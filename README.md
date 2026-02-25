@@ -1,59 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ToroGoSV - App de Comida a Domicilio
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+ToroGoSV es una plataforma de comida a domicilio en fase MVP (Producto Mínimo Viable) enfocada en Chalatenango, El Salvador. Conecta restaurantes locales con clientes, ofreciendo entregas rápidas y seguimiento en tiempo real. Este repositorio contiene el código de la landing page y el sistema de registro de leads (clientes, repartidores y negocios).
 
-## About Laravel
+Sitio web: https://torogoapp.com
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Características principales
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Landing page atractiva y responsive diseñada con Tailwind CSS.
+- Formulario de registro inteligente para:
+  - Clientes interesados en la app.
+  - Repartidores que quieran unirse.
+  - Negocios que deseen estar en la plataforma.
+- Campos dinámicos que se muestran según el tipo de usuario (ej. nombre del negocio para empresas, tipo de vehículo para repartidores).
+- Protección contra bots con Google reCAPTCHA v2.
+- Validaciones robustas en el backend con mensajes de error personalizados.
+- Páginas legales: Política de Privacidad y Términos y Condiciones.
+- SEO optimizado: metaetiquetas, Open Graph y favicons personalizados.
+- Listo para producción con configuración de entorno y base de datos.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tecnologías utilizadas
 
-## Learning Laravel
+- Laravel 12.x
+- PHP 8.2
+- Tailwind CSS 3.x
+- FontAwesome 6.7.2
+- MySQL 8.0+
+- Google reCAPTCHA v2
+- Git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Requisitos previos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP >= 8.2
+- Composer
+- MySQL / MariaDB
+- Node.js y NPM (opcional, para compilar assets)
+- Extensiones de PHP: pdo_mysql, mbstring, openssl, tokenizer, xml, ctype, json, fileinfo
 
-## Laravel Sponsors
+## Instalación en entorno local
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clonar el repositorio:
+   git clone https://github.com/ballsfox14/torogoapp_page.git
+   cd torogoapp_page
 
-### Premium Partners
+2. Instalar dependencias de PHP:
+   composer install
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. Configurar el archivo de entorno:
+   cp .env.example .env
+   Edita el archivo .env con los datos de tu base de datos local:
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nombre_bd_local
+   DB_USERNAME=root
+   DB_PASSWORD=
 
-## Contributing
+4. Generar clave de la aplicación:
+   php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Ejecutar migraciones:
+   php artisan migrate
 
-## Code of Conduct
+6. (Opcional) Instalar dependencias de Node y compilar assets:
+   npm install
+   npm run dev
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. Iniciar el servidor local:
+   php artisan serve
+   Luego visita http://localhost:8000
 
-## Security Vulnerabilities
+## Configuración adicional
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Google reCAPTCHA
+- Obtén tus claves en https://www.google.com/recaptcha/admin (selecciona reCAPTCHA v2 -> "No soy un robot").
+- Agrégalas a tu archivo .env:
+  NOCAPTCHA_SITEKEY=tu_site_key
+  NOCAPTCHA_SECRET=tu_secret_key
 
-## License
+### Favicons e imágenes
+- Los archivos de iconos deben colocarse en la carpeta public/.
+- La imagen para Open Graph (compartir.jpg) debe ir en public/images/.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Despliegue en producción
+
+1. Configurar el servidor con PHP 8.2+, MySQL y Composer.
+2. Subir el código (puedes usar Git, FTP, etc.).
+3. Crear el archivo .env en el servidor con las credenciales de producción.
+4. Instalar dependencias sin desarrollo:
+   composer install --optimize-autoloader --no-dev
+5. Ejecutar migraciones:
+   php artisan migrate --force
+6. Optimizar Laravel:
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+7. Configurar el servidor web (Apache/Nginx) para que apunte a la carpeta public/.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Para contribuir:
+- Haz un fork del repositorio.
+- Crea una rama para tu función (git checkout -b feature/nueva-funcion).
+- Realiza tus cambios y haz commit (git commit -m 'Agrega nueva función').
+- Sube los cambios (git push origin feature/nueva-funcion).
+- Abre un Pull Request.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+## Contacto
+
+- Email: contacto@torogoapp.com
+- Teléfono: +503 7043-2564
+- LinkedIn: https://www.linkedin.com/company/yerba-digital/
+
+Desarrollado con cariño en Chalatenango, El Salvador.
