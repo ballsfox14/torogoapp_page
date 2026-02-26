@@ -10,5 +10,6 @@ Route::get('/', function () {
 Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');
 
 // Páginas legales
+Route::view('/acuerdo', 'acuerdo')->name('acuerdo');
 Route::view('/privacidad', 'privacidad')->name('privacidad');
 Route::view('/terminos', 'terminos')->name('terminos');

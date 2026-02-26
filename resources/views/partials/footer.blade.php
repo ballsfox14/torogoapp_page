@@ -14,8 +14,8 @@
                     <a href="https://www.facebook.com/torogoappsv/" class="text-gray-300 hover:text-white" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="text-gray-300 hover:text-white" aria-label="X (Twitter)">
-                        <i class="fab fa-x-twitter"></i>
+                    <a href="https://www.tiktok.com/@torogoappsv" class="text-gray-300 hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
                     </a>
                     <a href="https://www.instagram.com/torogoapp/" class="text-gray-300 hover:text-white" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>

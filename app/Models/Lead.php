@@ -16,6 +16,8 @@ class Lead extends Model
         'type',
         'business_name',
         'vehicle_type',
-        'additional_info'
+        'additional_info',
+        'terms_accepted',
+        'status'
     ];
 }
